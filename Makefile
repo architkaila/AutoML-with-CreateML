@@ -3,11 +3,10 @@ setup:
 	pip install -r requirements.txt
 
 format:
-	black *.py
 	black scripts/*.py
 
 lint:
-	pylint --disable=R,C model/run_model.py
+	pylint --disable=R,C scripts/data_prep.py
 
 create_dataset:
 	python scripts/data_prep.py --source ./data/raw_data --dest_train ./data/train --dest_test ./data/test
